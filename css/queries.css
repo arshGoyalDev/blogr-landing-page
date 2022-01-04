@@ -1,0 +1,512 @@
+
+:root{
+  /* Primary */
+  --light-red: hsl(356, 100%, 66%);                         /*CTA text*/
+  --very-light-red: hsl(355, 100%, 74%);                    /*CTA hover background*/
+  --very-dark-blue: hsl(208, 49%, 24%);                     /*headings*/
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);                                 /*text*/
+  --grayish-blue: hsl(240, 2%, 79%);                         /*footer text*/
+  --very-dark-grayish-blue: hsl(207, 13%, 34%);              /*body copy*/
+  --very-dark-black-blue: hsl(240, 10%, 16%);                /*footer background*/
+
+  /* Gradient */
+  /* Background gradient - Intro/CTA mobile nav: */
+  --very-light-red: hsl(13, 100%, 72%);
+  --light-red: hsl(353, 100%, 62%);
+
+  /* Background gradient - body: */
+  --very-dark-gray-blue: hsl(237, 17%, 21%);
+  --very-dark-desaturated-blue: hsl(237, 23%, 32%);
+
+  /* font */
+  --overpass: 'Overpass', sans-serif;
+  --ubuntu: 'Ubuntu', sans-serif;
+}
+
+
+
+/**********devices with width of 540px or less**************/
+@media only screen and (max-width: 540px) {
+  header{
+    padding: 0 20px 80px;
+    background-repeat: no-repeat;
+    background-position: top 160px left -100px !important;
+    background-size: cover !important;
+  }
+}
+
+
+/**********devices with width of 1000px or less**************/
+@media only screen and (max-width: 1000px) {
+  nav{
+    padding: 60px 0 0 10px;
+  }
+  .menu-btn{
+    display: flex;
+  }
+  nav hr{
+    display: block;
+    width: 85%;
+  }
+  .menu{
+    padding: 30px 0;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: -3000px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff; 
+    text-align: center;
+    border-radius: 5px;
+    transition: .25s;
+  }
+  .menu ul{
+    width: 100%;
+  }
+  .menu ul li{
+    display: block;
+  }
+  .menu ul li::before{
+    display: none;
+  }
+  .menu ul li a{
+    color: #000 ;
+  }
+  .menu i{
+    color: var(--light-red);
+  }
+  
+  .menu ul .sub-menu{
+    position: static;
+    margin: 20px auto;
+    visibility: visible;
+    opacity: 1;
+    text-align: center;
+    background: rgb(245, 245, 245);
+    width: 90%;
+    display: none;
+    padding: 20px 0;
+    box-shadow: none;
+    border-radius: 5px;
+  }
+  .menu .sub-menu li{
+    margin: 15px;
+  }
+  .menu .sub-menu a{
+    color: var(--very-dark-grayish-blue);
+  }
+  
+  
+  .btn-container button{
+    display: block;
+  }
+  .login-btn{
+    margin: 20px 0 10px 8px;
+    color: #000;
+  }
+  .sign-up-btn{
+    background: linear-gradient(to right, var(--very-light-red), var(--light-red));
+    color: #fff;
+  }
+  .mobile-menu{
+    top: 160px;
+  }
+  .mobile-menu-item > a{
+    color:var(--very-dark-grayish-blue) !important;
+  }
+  .menu ul .mobile-menu-item .sub-menu{
+    display: block !important;
+  }
+}
+
+
+/**********devices with width of 1500px or less**************/
+@media only screen and  (max-width: 1500px){
+  header{
+    background-position: top -1300px right -1400px;
+  }
+}
+
+
+
+/**********devices with width of 410px or more**************/
+@media only screen and (min-width: 410px) {
+  .art-infrast-container{
+    margin-top: 320px;
+  }
+  .art-infrast-container img{
+    top: -220px;
+  }
+}
+
+
+/**********devices with width of 500px or more**************/
+@media only screen and (min-width: 500px){
+  .art-infrast-container{
+    margin-top: 440px;
+    padding: 200px 20px 110px 20px;
+  }  
+  .art-infrast-container img{
+    top: -320px;
+  }
+
+  .features-2 div p{
+    padding: 0 50px;
+  }
+}
+
+
+/**********devices with width of 600px or more**************/
+@media only screen and (min-width: 600px) {
+  header{
+    padding: 20px 20px 80px;
+  }
+  nav{
+    padding: 40px 0 0 20px;
+  }
+
+  .art-infrast-container{
+    margin-top: 300px;
+  }
+  .art-infrast-container img{
+    width: 70%;
+    top: -240px;
+  }
+}
+
+
+/**********devices with width of 700px or more**************/
+@media only screen and (min-width: 700px) {
+  .editor p, .robust p{
+    padding: 0 140px;
+  }
+  .mobile-img{
+    width: 65%;
+  }
+
+  .art-infrast-container{
+    margin-top: 320px;
+  }
+  .art-infrast-container img{
+    width: 60%;
+    top: -240px;
+  }
+
+  .features-2 div p{
+    padding: 0 120px;
+  }
+}
+
+
+/**********devices with width of 800px or more**************/
+@media only screen and (min-width: 800px){
+  .art-infrast-container{
+    margin-top: 380px;
+  }
+  .art-infrast-container img{
+    width: 60%;
+    top: -300px;
+  }
+}
+
+
+/**********devices with width of 1000px or more**************/
+@media only screen and (min-width: 1000px) {
+  body{
+    overflow-x: hidden;
+  }
+
+  .intro h1{
+    font-size: 3.4rem;
+  }
+  .intro-learn-btn,
+  .intro-strt-btn{
+    font-size: 1.05rem;
+  }
+  .intro div{
+    margin-top: 50px;
+  }
+
+  .art-infrast-container{
+    padding: 80px 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 200px;
+  }
+  .art-infrast-container::before{
+    width: 80%;
+    background-position: bottom -100px left -170px;
+  }
+  .art-infrast-container img{
+    left: 0;
+    top: -25%;
+    transform: translate(0);
+    width: 50%;
+  }
+  .art-infrast-container div{
+    width: 50%;
+    text-align: start;
+  }
+
+  .features-2-container{
+    margin: 120px 0 0 0;
+  }
+  .features-2-container img{
+    width: 80%;
+  }
+  .features-2 div p{
+    padding: 0 160px;
+  }
+
+  footer{
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 80px 100px;
+  }
+  footer ul{
+    text-align: start;
+  }
+  footer p{
+    text-align: start;
+  }
+  .list-1, .list-2, .list-3{
+    width: 18%;
+    margin: 0;
+  }
+  .logo-container{
+    width: 18%;
+  }
+}
+
+
+/**********devices with width of 1100px or more**************/
+@media only screen and (min-width: 1100px) {
+  header{
+    padding: 0 80px 40px;
+  }
+  
+  .future-container{
+    position: relative;
+  }
+  .feature-container{
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 460px;
+  }
+  .features{
+    width: 50%;
+    text-align: start;
+    padding-left: 80px;
+  }
+  .editor{
+    margin-top: 0;
+  }
+  .editor h2, .editor p, 
+  .robust h2, .robust p{
+    padding: 0;
+  }
+  .feature-container img{
+    top: -5%;
+    position: absolute;
+    right: -17%;
+    width: 60%;
+  }
+  .mobile-img{
+    display: none;
+  }
+  .desktop-img{
+    display: inline-block;
+  }
+
+  .art-infrast-container{
+    margin-top: 140px;
+    padding: 80px;
+  }
+  .art-infrast-container img{
+    width: 45%;
+    left: 40px;
+  }
+
+  .features-2-container{
+    justify-content: flex-end;
+    flex-direction: row;
+    text-align: start;
+    margin: 160px 0 0 0;
+    position: relative;
+  }
+  .features-2-container img{
+    position: absolute;
+    top: 0;
+    left: -18.5%;
+    width: 60%;
+    height: 600px;
+  }
+  
+  .features-2{
+    padding-right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+    margin: 0;
+    height: 600px;
+  }
+  .feature-free-open-simple{
+    margin-bottom: 40px;
+  }
+  .features-2 div p{
+    padding: 0;
+  }
+}
+
+
+/**********devices with width of 1250px or more**************/
+@media only screen and (min-width: 1250px) {
+  header{
+    padding: 0 140px 40px;
+  }
+  nav{
+    padding: 80px 0 0 0;
+  }
+  .feature-container{
+    height: 520px;
+  }
+  .features{
+    padding-left: 120px;
+  }
+  .future-container h1{
+    font-size: 2.1rem;
+    position: relative;
+    top: 40px;
+  }
+  .editor h2, .robust h2{
+    font-size: 1.7rem;
+  }
+  .editor p, .robust p{
+    font-size: 1.1rem;
+  }
+
+  .art-infrast-container{
+    padding: 80px 140px;
+  }
+
+  .art-infrast-container img{
+    width: 40%;
+    left: 80px;
+  }
+
+  .features-2{
+    padding-right: 140px;
+  }
+
+  footer{
+    padding: 80px 140px;
+  }
+}
+
+
+/**********devices with width of 1350px or more**************/
+@media only screen and (min-width: 1350px) {
+  .feature-container{
+    height: 580px;
+  }
+  .features{
+    padding-left: 140px;
+    width: 45%;
+    padding-top: 40px;
+  }
+
+  .art-infrast-container{
+    padding: 80px 140px;
+  }
+
+  .art-infrast-container img{
+    top: -32%;
+    width: 40%;
+    left: 100px;
+  }
+}
+
+
+/**********devices with width of 1440px or more**************/
+@media only screen and (min-width: 1440px){
+  .art-infrast-container{
+    margin-top: 200px;
+  }
+  .art-infrast-container img{
+    top: -36%;
+  }
+
+  .features-2-container img{
+    height: 700px;
+  }
+  
+  .features-2{
+    height: 700px;
+  }
+}
+
+
+/**********devices with width of 1540px or more**************/
+@media only screen and (min-width: 1540px) {
+  header{
+    padding: 0 200px 40px;
+  }
+  
+  .features{
+    padding-top: 60px;
+    padding-left: 200px;
+  }
+  .feature-container img{
+    width: 60%;
+    height: 130%;
+  }
+
+  .art-infrast-container{
+    padding: 80px 200px;
+    margin-top: 240px;
+  }
+  .art-infrast-container img{
+    width: 35%;
+    top: -30%;
+    left: 160px;
+  }
+
+  .features-2{
+    padding-right: 200px;
+  }
+
+  .features-2-container{
+    justify-content: flex-end;
+    flex-direction: row;
+    text-align: start;
+    margin: 260px 0 0 0;
+    position: relative;
+  }
+
+  footer{
+    padding: 80px 200px;
+  }
+
+}
+
+
+/**********devices with width of 1640px or more**************/
+@media only screen and (min-width: 1640px) {
+  .art-infrast-container img{
+    top: -50%;
+  }
+
+  .features-2-container img{
+    height: 900px;
+  }
+  
+  .features-2{
+    height: 900px;
+  }
+}

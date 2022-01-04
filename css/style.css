@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+:root{
+  /* Primary */
+  --light-red: hsl(356, 100%, 66%);                         /*CTA text*/
+  --very-light-red: hsl(355, 100%, 74%);                    /*CTA hover background*/
+  --very-dark-blue: hsl(208, 49%, 24%);                     /*headings*/
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);                                 /*text*/
+  --grayish-blue: hsl(240, 2%, 79%);                         /*footer text*/
+  --very-dark-grayish-blue: hsl(207, 13%, 34%);              /*body copy*/
+  --very-dark-black-blue: hsl(240, 10%, 16%);                /*footer background*/
+
+  /* Gradient */
+  /* Background gradient - Intro/CTA mobile nav: */
+  --very-light-red: hsl(13, 100%, 72%);
+  --light-red: hsl(353, 100%, 62%);
+
+  /* Background gradient - body: */
+  --very-dark-gray-blue: hsl(237, 17%, 21%);
+  --very-dark-desaturated-blue: hsl(237, 23%, 32%);
+
+  /* font */
+  --overpass: 'Overpass', sans-serif;
+  --ubuntu: 'Ubuntu', sans-serif;
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar{
+  width: 3px;
+}
+::-webkit-scrollbar-track{
+  background-color: var(--white);
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to bottom, var(--very-light-red), var(--light-red));
+}
+
+
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+.desktop-img{
+  display: none;
+}
+
+
+/***************** header ***************/
+header{
+  position: relative;
+  border-bottom-left-radius: 100px;
+  background: url(../images/bg-pattern-intro.svg);
+  background-position: top -1300px right -1000px;
+}
+header::before{
+  content: '';
+  position: absolute;
+  top: 0;  left: 0;
+  width: 100%;  height: 100%;
+  background: linear-gradient(to right, var(--very-light-red), var(--light-red));
+  z-index: -1;
+}
+/*******************nav bar************************/
+nav{
+  padding: 80px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu{
+  width: 86%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu ul{
+  list-style: none;
+}
+.menu ul li{
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+  padding: 20px 0;
+  font-size: 1.1rem;
+}
+
+.menu ul li::after{
+  content: '';
+  position: absolute;
+  bottom: 18px;  left: 0;
+  width: 100%;  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .25s ease-out;
+}
+.menu ul li:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menu ul li i{
+  margin-left: 5px;
+  font-size: 0.7rem;
+}
+.menu ul li:hover i::before{
+  content: '\f077';
+}
+
+.menu ul li a{
+  color: var(--white);
+  font-family: var(--ubuntu);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.menu ul .sub-menu{
+  position: absolute;
+  top: 50px;
+  left: -20px;
+  padding: 30px 80px 15px 30px;
+  background: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  transition: 0.25s;
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.2),
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.menu ul li:hover .sub-menu{
+  top: 60px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu .sub-menu li{
+  display: block;
+  margin-left: 0px;
+  margin-bottom: 15px;
+  padding: 0;
+}
+.menu .sub-menu a{
+  font-weight: 400;
+  color:#000;
+  transition: 0.2s;
+}
+.menu .sub-menu a:hover{
+  font-weight: 900;
+}
+
+.login-btn, .sign-up-btn{
+  padding: 15px 50px;
+  font-weight: 900;
+  color: var(--light-red);
+  font-family: var(--ubuntu);
+  border-radius: 100px;
+  background: var(--white);
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.25s;
+}
+.login-btn{
+  background: transparent;
+  color: var(--white);
+}
+.sign-up-btn:hover{
+  background: hsl(355, 100%, 75%);
+  color: hsl(0, 0%, 100%);
+}
+
+
+nav hr{
+  display: none;
+}
+
+.menu-btn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;  height: 30px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  display: none;
+}
+.menu-btn-burger{
+  width: 30px;  height: 3px;
+  background: var(--white);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn-burger::before,
+.menu-btn-burger::after{
+  content: "";
+  position: absolute;
+  width: 30px;  height: 3px;
+  background: var(--white);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn-burger::before{
+  transform: translateY(-8px);
+}
+.menu-btn-burger::after{
+  transform: translateY(8px);
+}
+.menu-btn.open .menu-btn-burger{
+  /* transform: translateX(-10px); */
+  width: 0;
+}
+.menu-btn.open .menu-btn-burger::before{
+  transform: rotate(45deg) translate(-5px, 5px);
+}
+.menu-btn.open .menu-btn-burger::after{
+  transform: rotate(-45deg) translate(-5px, -5px);
+}
+
+
+/*******************intro section****************/
+.intro{
+  margin: 100px 0;
+  text-align: center;
+}
+.intro h1{
+  font-size: 2.2rem;
+  line-height: 50px;
+  color: var(--white);
+  font-family: var(--overpass);
+  margin-bottom: 15px;
+  padding: 10px;
+}
+.intro p{
+  color: var(--white);
+  font-family: var(--overpass);
+  margin-bottom: 30px;
+}
+.intro-strt-btn, .intro .intro-learn-btn{
+  border-radius: 100px;
+  font-family: var(--ubuntu);
+  font-weight: 900;
+  border: 2px solid var(--white);
+  margin: 5px;
+  transition: 0.2s;
+}
+.intro-strt-btn{
+  padding: 10px 15px;
+  color: var(--light-red);
+  background: var(--white);
+}
+.intro-strt-btn:hover{
+  background: hsl(355, 100%, 75%);
+  color: hsl(0, 0%, 100%);
+  border-color: hsl(355, 100%, 75%);
+}
+
+.intro-learn-btn{
+  background: none;
+  color: var(--white);
+  padding: 10px 20px;
+}
+
+.intro-learn-btn:hover{
+  background: var(--white);
+  color: var(--light-red);
+}
+
+
+
+/******************future section*******************/
+.future-container{
+  margin-top: 80px;
+  text-align: center;
+}
+.future-container h1{
+  font-family: var(--overpass);
+  color: var(--very-dark-blue);
+  font-size: 1.8rem;
+}
+
+.feature-container{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.editor{
+  margin-top: 30px;
+}
+.editor h2, .robust h2{
+  font-family: var(--overpass);
+  color: var(--very-dark-blue);
+  padding: 0 50px;
+  margin-bottom: 10px;
+}
+.editor p, .robust p{
+  padding: 0 30px;
+  line-height: 1.4;
+  font-family: var(--ubuntu);
+  color: var(--very-dark-grayish-blue);
+}
+.robust{
+  margin-top: 30px;
+}
+
+.mobile-img{
+  width: 95%;
+  margin: 0 auto;
+}
+
+
+
+/****************Art Infrastructure section*******************/
+.art-infrast-container{
+  margin-top: 280px;
+  background: var(--very-dark-gray-blue);
+  /* background: var(--very-dark-desaturated-blue); */
+  border-radius: 0 100px 0 100px;
+  padding: 200px 20px 110px 20px;
+  text-align: center;
+  position: relative;
+  z-index: -2;
+}
+
+.art-infrast-container::before{
+  content: '';
+  position: absolute;
+  top: 0;  left: 0;
+  width: 99%;
+  height: 99%;
+  background: url(../images/bg-pattern-circles.svg) no-repeat;
+  background-size: cover;
+  background-position: bottom 250px left -100px;
+  border-radius: 0 100px 0 100px;
+  z-index: -1;
+}
+
+.art-infrast-container img{
+  position: absolute;
+  width: 95%;
+  left: 50%;
+  transform: translate(-50%);
+  top: -160px;
+}
+.art-infrast-container div h1{
+  font-family: var(--overpass);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.art-infrast-container div p{
+  color: var(--grayish-blue);
+  font-family: var(--ubuntu);
+  line-height: 2;
+}
+
+
+
+/******************features section*********************/
+.features-2-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 80px 0 0 0;
+}
+.features-2-container img{
+  width: 100%;
+}
+
+.features-2{
+  margin: 40px 0 0 0;
+}
+.feature-free-open-simple{
+  margin-bottom: 40px;
+}
+.features-2 div h2{
+  font-family: var(--overpass);
+  color: var(--very-dark-blue);
+  margin-bottom: 15px;
+}
+.features-2 div p{
+  padding: 0 25px;
+  font-family: var(--ubuntu);
+  color: var(--very-dark-grayish-blue);
+  line-height: 1.8;
+}
+
+
+/********************footer****************/
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0;
+  background: var(--very-dark-black-blue);
+  border-radius: 0 100px 0 0;
+  margin: 100px 0 0 0;
+}
+
+footer ul{
+  list-style: none;
+  text-align: center;
+}
+footer p{
+  text-align: center;
+  color: var(--white);
+  font-family: var(--ubuntu);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+footer li{
+  margin-bottom: 10px;
+}
+footer a{
+  color: var(--grayish-blue);
+  font-family: var(--ubuntu);
+  position: relative;
+}
+footer li a:before{
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;  right: 0;
+  width: 100%;  height: 2px;
+  background: var(--grayish-blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s ease-in-out;
+}
+footer li a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.list-1{
+margin-top: 80px;
+}
+.list-2,
+.list-3{
+  margin-top: 40px;
+}
